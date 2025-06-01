@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# Controllo dei parametri IP e porta passati tramite bash
+# Check IP and port shell parameters
 
 
-# Verifica che la porta sia aperta, usando `/dev/tcp`
+# Check port is open using `/dev/tcp`
 
 
-# Parse del risultato e output del programma aperta / chiusa
+# Parse result
 
+
+# Output open / closed port

@@ -1,15 +1,15 @@
-### 🔐 1. Scanner di porte base
+### 🔐 1. Port Scanner
 
-**Obiettivo:**
-- Scrivi uno script che accetti un indirizzo IP o hostname e una porta.
-- Verifica se la porta è aperta usando `/dev/tcp` o un comando equivalente.
-- Mostra un messaggio che indichi se la porta è aperta o chiusa.
+**Objective:**
+- Write a script that accepts an IP address or hostname and a port.
+- Check if the port is open using `/dev/tcp` or an equivalent command.
+- Display a message indicating whether the port is open or closed.
 
-**✅ Criteri di successo:**
-- Lo script accetta due argomenti: host e porta.
-- Ritorna un messaggio chiaro se la porta è aperta o chiusa.
-- Gestisce errori (es. host non raggiungibile).
+**✅ Success Criteria:**
+- The script accepts two arguments: host and port.
+- Returns a clear message if the port is open or closed.
+- Handles errors (e.g., unreachable host).
 
-**💡 Sfida extra:**
-- Aggiungi la possibilità di scansionare un range di porte (es. dalla 20 alla 80).
-- Salva i risultati in un file di log con timestamp.
+**💡 Extra Challenge:**
+- Add the ability to scan a range of ports (e.g., from 20 to 80).
+- Save the results in a log file with a timestamp.
