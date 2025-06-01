@@ -1,12 +1,9 @@
 #!/bin/bash
 
-# Check IP and port shell parameters
+host=${1:?"missing arg 1 for host"}
+port=${2:?"missing arg 2 for port"}
 
+echo "host address is: $host"
+echo "port number is: $port"
 
-# Check port is open using `/dev/tcp`
-
-
-# Parse result
-
-
-# Output open / closed port
+timeout 1 bash -c "</dev/tcp/$host/$port" 2>/dev/null && echo "Port $port is open on $host" || echo "Port $port is closed on $host"
