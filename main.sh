@@ -8,7 +8,15 @@ if [[ $port =~ ([0-9]+)-([0-9]+) ]]; then
   end=${BASH_REMATCH[2]}
 fi
 
+log_message() {
+  echo "`date "+%Y-%m-%d %H:%M:%S"` $1" | tee -a log
+}
+
 for p in $(seq $start $end);
 do
-    timeout 1 bash -c "</dev/tcp/$host/$p" 2>/dev/null && echo "`date "+%Y-%m-%d %H:%M:%S"` Port $p is open on $host" | tee -a log || echo "`date "+%Y-%m-%d %H:%M:%S"` Port $p is closed on $host" | tee -a log
+    if timeout 1 bash -c "</dev/tcp/$host/$p" 2>/dev/null; then
+      log_message "Port $p is open on $host"
+    else
+      log_message "Port $p is closed on $host"
+    fi
 done
