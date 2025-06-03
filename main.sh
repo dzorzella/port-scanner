@@ -10,5 +10,5 @@ fi
 
 for p in $(seq $start $end);
 do
-    timeout 1 bash -c "</dev/tcp/$host/$p" 2>/dev/null && echo "Port $p is open on $host" || echo "Port $p is closed on $host"
+    timeout 1 bash -c "</dev/tcp/$host/$p" 2>/dev/null && echo "`date "+%Y-%m-%d %H:%M:%S"` Port $p is open on $host" | tee -a log || echo "`date "+%Y-%m-%d %H:%M:%S"` Port $p is closed on $host" | tee -a log
 done
